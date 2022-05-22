@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/StudentsApp/app/src/main/res/drawable/custom_button.xml" value="0.17743055555555556" />
+        <entry key="..\:/StudentsApp/app/src/main/res/drawable/custom_input.xml" value="0.17743055555555556" />
+        <entry key="..\:/StudentsApp/app/src/main/res/drawable/plane_rectangle.xml" value="0.17743055555555556" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/activity_main.xml" value="0.11200000000000002" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_academic.xml" value="0.16666666666666666" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_home.xml" value="0.16666666666666666" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_signin.xml" value="0.25" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_signup.xml" value="0.2" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_splash_screen.xml" value="0.136" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/notice_card.xml" value="0.16666666666666666" />
+        <entry key="..\:/StudentsApp/app/src/main/res/menu/menu.xml" value="0.16666666666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

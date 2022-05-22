@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreen">
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.example.studentsapp.SplashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_signin"
+            app:destination="@id/signin" />
+    </fragment>
+    <fragment
+        android:id="@+id/signin"
+        android:name="com.example.studentsapp.Signin"
+        android:label="fragment_signin"
+        tools:layout="@layout/fragment_signin" >
+        <action
+            android:id="@+id/action_signin_to_signup"
+            app:destination="@id/signup" />
+        <action
+            android:id="@+id/action_signin_to_admin_login"
+            app:destination="@id/admin_login" />
+    </fragment>
+    <fragment
+        android:id="@+id/signup"
+        android:name="com.example.studentsapp.Signup"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signup_to_signin"
+            app:destination="@id/signin" />
+        <action
+            android:id="@+id/action_signup_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.studentsapp.home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home2_to_academic"
+            app:destination="@id/academic" />
+        <action
+            android:id="@+id/action_home2_to_non_academic"
+            app:destination="@id/non_academic" />
+        <action
+            android:id="@+id/action_home2_to_faculty"
+            app:destination="@id/faculty" />
+        <action
+            android:id="@+id/action_home2_to_profile"
+            app:destination="@id/profile" />
+        <action
+            android:id="@+id/action_home2_to_noticeDetails"
+            app:destination="@id/noticeDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/academic"
+        android:name="com.example.studentsapp.academic"
+        android:label="fragment_academic"
+        tools:layout="@layout/fragment_academic" />
+    <fragment
+        android:id="@+id/non_academic"
+        android:name="com.example.studentsapp.non_academic"
+        android:label="fragment_non_academic"
+        tools:layout="@layout/fragment_non_academic" />
+    <fragment
+        android:id="@+id/faculty"
+        android:name="com.example.studentsapp.faculty"
+        android:label="fragment_faculty"
+        tools:layout="@layout/fragment_faculty" />
+    <fragment
+        android:id="@+id/profile_details"
+        android:name="com.example.studentsapp.profile_details"
+        android:label="fragment_profile_details"
+        tools:layout="@layout/fragment_profile_details" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.studentsapp.profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile_to_profile_details"
+            app:destination="@id/profile_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/admin_login"
+        android:name="com.example.studentsapp.admin_login"
+        android:label="fragment_admin_login"
+        tools:layout="@layout/fragment_admin_login" >
+        <action
+            android:id="@+id/action_admin_login_to_admin_dashboard"
+            app:destination="@id/admin_dashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/admin_dashboard"
+        android:name="com.example.studentsapp.admin_dashboard"
+        android:label="fragment_admin_dashboard"
+        tools:layout="@layout/fragment_admin_dashboard" >
+        <action
+            android:id="@+id/action_admin_dashboard_to_createNotice"
+            app:destination="@id/createNotice" />
+    </fragment>
+    <fragment
+        android:id="@+id/createNotice"
+        android:name="com.example.studentsapp.createNotice"
+        android:label="fragment_create_notice"
+        tools:layout="@layout/fragment_create_notice" />
+    <fragment
+        android:id="@+id/noticeDetails"
+        android:name="com.example.studentsapp.noticeDetails"
+        android:label="fragment_notice_details"
+        tools:layout="@layout/fragment_notice_details" />
+</navigation>

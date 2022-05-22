@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "588782111237",
+    "project_id": "studentsapp-eb2de",
+    "storage_bucket": "studentsapp-eb2de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588782111237:android:9bd8d2278aa79a88fbaa6c",
+        "android_client_info": {
+          "package_name": "com.example.studentsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588782111237-l0tsm77bqppal1retu7j2a7kitutptap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqa5GsUFIIIc2Ftyw8tR3KnM8vvGaY1c8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588782111237-l0tsm77bqppal1retu7j2a7kitutptap.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
