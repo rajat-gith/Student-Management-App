@@ -8,10 +8,13 @@
         <entry key="..\:/StudentsApp/app/src/main/res/drawable/plane_rectangle.xml" value="0.17743055555555556" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_academic.xml" value="0.16666666666666666" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_faculty.xml" value="0.16666666666666666" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_home.xml" value="0.16666666666666666" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_profile.xml" value="0.16666666666666666" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_signin.xml" value="0.25" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_signup.xml" value="0.2" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_splash_screen.xml" value="0.136" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/item_custom_row.xml" value="0.16666666666666666" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/notice_card.xml" value="0.16666666666666666" />
         <entry key="..\:/StudentsApp/app/src/main/res/menu/menu.xml" value="0.16666666666666666" />
       </map>
