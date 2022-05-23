@@ -3,40 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/signin">
-    <fragment
-        android:id="@+id/splashScreen"
-        android:name="com.example.studentsapp.SplashScreen"
-        android:label="fragment_splash_screen"
-        tools:layout="@layout/fragment_splash_screen" >
-        <action
-            android:id="@+id/action_splashScreen_to_signin"
-            app:destination="@id/signin" />
-    </fragment>
-    <fragment
-        android:id="@+id/signin"
-        android:name="com.example.studentsapp.Signin"
-        android:label="fragment_signin"
-        tools:layout="@layout/fragment_signin" >
-        <action
-            android:id="@+id/action_signin_to_signup"
-            app:destination="@id/signup" />
-        <action
-            android:id="@+id/action_signin_to_admin_login"
-            app:destination="@id/admin_login" />
-    </fragment>
-    <fragment
-        android:id="@+id/signup"
-        android:name="com.example.studentsapp.Signup"
-        android:label="fragment_signup"
-        tools:layout="@layout/fragment_signup" >
-        <action
-            android:id="@+id/action_signup_to_signin"
-            app:destination="@id/signin" />
-        <action
-            android:id="@+id/action_signup_to_home2"
-            app:destination="@id/home2" />
-    </fragment>
+    app:startDestination="@id/home2">
     <fragment
         android:id="@+id/home2"
         android:name="com.example.studentsapp.home"
@@ -86,15 +53,6 @@
         <action
             android:id="@+id/action_profile_to_profile_details"
             app:destination="@id/profile_details" />
-    </fragment>
-    <fragment
-        android:id="@+id/admin_login"
-        android:name="com.example.studentsapp.admin_login"
-        android:label="fragment_admin_login"
-        tools:layout="@layout/fragment_admin_login" >
-        <action
-            android:id="@+id/action_admin_login_to_admin_dashboard"
-            app:destination="@id/admin_dashboard" />
     </fragment>
     <fragment
         android:id="@+id/admin_dashboard"
