@@ -38,6 +38,10 @@ class Signin : AppCompatActivity() {
                 Toast.makeText(this,"Enter the Details",Toast.LENGTH_LONG).show()
             }
         }
+        admin_button.setOnClickListener {
+            val intent=Intent(this,adminLogin::class.java)
+            startActivity(intent)
+        }
     }
     private fun checking():Boolean
     {

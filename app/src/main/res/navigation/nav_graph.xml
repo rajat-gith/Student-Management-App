@@ -39,7 +39,11 @@
         android:id="@+id/faculty"
         android:name="com.example.studentsapp.faculty"
         android:label="fragment_faculty"
-        tools:layout="@layout/fragment_faculty" />
+        tools:layout="@layout/fragment_faculty" >
+        <action
+            android:id="@+id/action_faculty_to_deptpage_for_student"
+            app:destination="@id/deptpage_for_student" />
+    </fragment>
     <fragment
         android:id="@+id/profile_details"
         android:name="com.example.studentsapp.profile_details"
@@ -55,22 +59,13 @@
             app:destination="@id/profile_details" />
     </fragment>
     <fragment
-        android:id="@+id/admin_dashboard"
-        android:name="com.example.studentsapp.admin_dashboard"
-        android:label="fragment_admin_dashboard"
-        tools:layout="@layout/fragment_admin_dashboard" >
-        <action
-            android:id="@+id/action_admin_dashboard_to_createNotice"
-            app:destination="@id/createNotice" />
-    </fragment>
-    <fragment
-        android:id="@+id/createNotice"
-        android:name="com.example.studentsapp.createNotice"
-        android:label="fragment_create_notice"
-        tools:layout="@layout/fragment_create_notice" />
-    <fragment
         android:id="@+id/noticeDetails"
         android:name="com.example.studentsapp.noticeDetails"
         android:label="fragment_notice_details"
         tools:layout="@layout/fragment_notice_details" />
+    <fragment
+        android:id="@+id/deptpage_for_student"
+        android:name="com.example.studentsapp.deptpage_for_student"
+        android:label="fragment_deptpage_for_student"
+        tools:layout="@layout/fragment_deptpage_for_student" />
 </navigation>
