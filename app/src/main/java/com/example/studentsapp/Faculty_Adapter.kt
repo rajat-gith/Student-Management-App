@@ -15,7 +15,7 @@ class Faculty_Adapter(private val facultylist:ArrayList<department_card>):Recycl
     override fun onBindViewHolder(holder: faculty_viewholder, position: Int) {
         val currentitem=facultylist[position]
         holder.f_name.text=currentitem.faculty_name
-        holder.f_name.text=currentitem.faculty_desgn
+        holder.f_desgn.text=currentitem.faculty_desgn
     }
 
     override fun getItemCount(): Int {
