@@ -9,6 +9,7 @@ import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_department_descriptiom.*
+import kotlinx.android.synthetic.main.fragment_department_descriptiom.view.*
 
 
 class Department_descriptiom : Fragment() {
@@ -22,16 +23,20 @@ class Department_descriptiom : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val faculty_name=faculty_name.text.toString()
-        val faculty_desgn=faculty_desgn.text.toString()
+
         val view=inflater.inflate(R.layout.fragment_department_descriptiom, container, false)
-        database=FirebaseDatabase.getInstance().getReference("Faculties")
-        val faculty=department_card(faculty_name,faculty_desgn)
-        database.child(faculty_name).setValue(faculty).addOnSuccessListener {
-            Toast.makeText(activity?.applicationContext,"Successfully Saved", Toast.LENGTH_SHORT).show()
+        val f_name=view.faculty_name
+        val f_desgn=view.faculty_desgn
+        val save=view.save
+        save.setOnClickListener {
+            val faculty_name=f_name.text.toString()
+            val faculty_desgn=f_desgn.text.toString()
+            database=FirebaseDatabase.getInstance().getReference("Faculties")
+            val faculty=department_card(faculty_name,faculty_desgn)
+            database.child(faculty_name).setValue(faculty).addOnSuccessListener {
+                Toast.makeText(activity?.applicationContext,"Successfully Saved", Toast.LENGTH_SHORT).show()
+            }
         }
-
-
         return view
     }
 
