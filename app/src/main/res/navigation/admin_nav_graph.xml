@@ -8,12 +8,20 @@
         android:id="@+id/create_notice"
         android:name="com.example.studentsapp.create_notice"
         android:label="fragment_create_notice"
-        tools:layout="@layout/fragment_create_notice" />
+        tools:layout="@layout/fragment_create_notice" >
+        <action
+            android:id="@+id/action_create_notice_to_admin_panel"
+            app:destination="@id/admin_panel" />
+    </fragment>
     <fragment
         android:id="@+id/department_descriptiom"
         android:name="com.example.studentsapp.Department_descriptiom"
         android:label="fragment_department_descriptiom"
-        tools:layout="@layout/fragment_department_descriptiom" />
+        tools:layout="@layout/fragment_department_descriptiom" >
+        <action
+            android:id="@+id/action_department_descriptiom_to_admin_panel"
+            app:destination="@id/admin_panel" />
+    </fragment>
     <fragment
         android:id="@+id/admin_panel"
         android:name="com.example.studentsapp.admin_panel"

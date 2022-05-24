@@ -16,7 +16,7 @@ class adminLogin : AppCompatActivity() {
             var password=password.text.toString().trim()
             var code=code.text.toString().trim()
             if(username=="admin_app@gmail.com"
-                && password=="adminenter"
+                && password=="admin"
                 && code=="1234"){
                 val intent= Intent(this,admin_dashboard::class.java)
                 startActivity(intent)

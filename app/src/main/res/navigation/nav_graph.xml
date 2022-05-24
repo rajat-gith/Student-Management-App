@@ -21,9 +21,6 @@
         <action
             android:id="@+id/action_home2_to_profile"
             app:destination="@id/profile" />
-        <action
-            android:id="@+id/action_home2_to_noticeDetails"
-            app:destination="@id/noticeDetails" />
     </fragment>
     <fragment
         android:id="@+id/academic"
@@ -58,11 +55,6 @@
             android:id="@+id/action_profile_to_profile_details"
             app:destination="@id/profile_details" />
     </fragment>
-    <fragment
-        android:id="@+id/noticeDetails"
-        android:name="com.example.studentsapp.noticeDetails"
-        android:label="fragment_notice_details"
-        tools:layout="@layout/fragment_notice_details" />
     <fragment
         android:id="@+id/deptpage_for_student"
         android:name="com.example.studentsapp.deptpage_for_student"

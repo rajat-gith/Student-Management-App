@@ -1,59 +1,90 @@
 package com.example.studentsapp
 
+import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
+import kotlinx.android.synthetic.main.fragment_create_notice.*
+import kotlinx.android.synthetic.main.fragment_create_notice.view.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+private const val REQUEST_CODE_IMAGE_PICK = 0
 
-/**
- * A simple [Fragment] subclass.
- * Use the [create_notice.newInstance] factory method to
- * create an instance of this fragment.
- */
 class create_notice : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
+    var curFile: Uri? = null
+    private lateinit var url:String
+    val docref = Firebase.storage.reference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_notice, container, false)
+        val view= inflater.inflate(R.layout.fragment_create_notice, container, false)
+        val upload_button=view.button2
+        val fileicon=view.fileicon
+        val title_field=view.notice_title
+
+
+
+        fileicon.setOnClickListener {
+            Intent(Intent.ACTION_GET_CONTENT).also {
+                it.type="application/pdf"
+                startActivityForResult(it, REQUEST_CODE_IMAGE_PICK)
+            }
+        }
+
+        upload_button.setOnClickListener {
+            val title=title_field.text.toString()
+            uploadImageToStorage(title)
+        }
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment create_notice.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            create_notice().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun uploadImageToStorage(filename: String) = CoroutineScope(Dispatchers.IO).launch {
+        try {
+            curFile?.let {
+                docref.child("Notices/$filename").putFile(it).await()
+
+                withContext(Dispatchers.Main) {
+
+                    Toast.makeText(activity?.applicationContext, "Successfully uploaded to Cloud",
+                        Toast.LENGTH_LONG).show()
                 }
             }
+        } catch (e: Exception) {
+            withContext(Dispatchers.Main) {
+                Toast.makeText(activity?.applicationContext, e.message, Toast.LENGTH_LONG).show()
+            }
+        }
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE_IMAGE_PICK) {
+            data?.data?.let {
+                curFile = it
+                fileicon.setImageResource(R.drawable.ic_pdf_icon)
+                textView.text=""
+                Toast.makeText(activity?.applicationContext,"File Fetched",Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+
 }
