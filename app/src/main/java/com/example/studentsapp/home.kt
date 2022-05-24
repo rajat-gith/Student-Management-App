@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
@@ -32,7 +33,15 @@ class home : Fragment() {
         notice_recyclerview.layoutManager=LinearLayoutManager(this.context)
         noticelist= arrayListOf<Notice_card>()
         getnoticedata()
+
+        view.academic_button.setOnClickListener {
+            findNavController().navigate(R.id.action_home2_to_faculty)
+        }
+        view.non_academic_button.setOnClickListener {
+            findNavController().navigate(R.id.action_home2_to_non_academic)
+        }
         return view
+
     }
     private fun getnoticedata() {
         dbref = FirebaseDatabase.getInstance().getReference("Notices")
