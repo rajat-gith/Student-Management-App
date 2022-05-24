@@ -10,6 +10,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.fragment_create_notice.*
@@ -26,6 +28,7 @@ class create_notice : Fragment() {
     var curFile: Uri? = null
     private lateinit var url:String
     val docref = Firebase.storage.reference
+    private lateinit var database:DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -51,6 +54,11 @@ class create_notice : Fragment() {
 
         upload_button.setOnClickListener {
             val title=title_field.text.toString()
+            database=FirebaseDatabase.getInstance().getReference("Notices")
+            val notice=Notice_card(title)
+            database.child(title).setValue(notice).addOnSuccessListener {
+                Toast.makeText(activity?.applicationContext,"Successfully Saved",Toast.LENGTH_SHORT).show()
+            }
             uploadImageToStorage(title)
         }
         return view
