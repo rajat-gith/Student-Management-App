@@ -25,7 +25,7 @@ class admin_panel : Fragment() {
         val dept=view.department
         val notice_card=view.notice_card
         dept.setOnClickListener {
-            findNavController().navigate(R.id.action_admin_panel_to_admin_dept_page2)
+            findNavController().navigate(R.id.action_admin_panel_to_admin_dept_page)
         }
         notice_card.setOnClickListener {
             findNavController().navigate(R.id.action_admin_panel_to_create_notice)
