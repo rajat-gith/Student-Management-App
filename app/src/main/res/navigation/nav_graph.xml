@@ -55,7 +55,8 @@
             app:destination="@id/create_newProfie" />
         <argument
             android:name="Emailtoken"
-            app:argType="string" />
+            app:argType="string"
+            android:defaultValue="Your_Name" />
     </fragment>
     <fragment
         android:id="@+id/deptpage_for_student"

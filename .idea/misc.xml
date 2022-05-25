@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/StudentsApp/app/src/main/res/drawable/custom_button.xml" value="0.17743055555555556" />
         <entry key="..\:/StudentsApp/app/src/main/res/drawable/custom_input.xml" value="0.17743055555555556" />
+        <entry key="..\:/StudentsApp/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.26614583333333336" />
         <entry key="..\:/StudentsApp/app/src/main/res/drawable/plane_rectangle.xml" value="0.17743055555555556" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.15789473684210525" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/activity_admin_login.xml" value="0.15789473684210525" />
@@ -31,7 +32,7 @@
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_splash_screen.xml" value="0.136" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/item_custom_row.xml" value="0.16666666666666666" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/notice_card.xml" value="0.16666666666666666" />
-        <entry key="..\:/StudentsApp/app/src/main/res/menu/menu.xml" value="0.16666666666666666" />
+        <entry key="..\:/StudentsApp/app/src/main/res/menu/menu.xml" value="0.1" />
       </map>
     </option>
   </component>

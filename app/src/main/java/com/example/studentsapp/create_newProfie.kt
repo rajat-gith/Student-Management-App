@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_sign_up.*
@@ -30,33 +31,32 @@ class create_newProfie : Fragment() {
         val view= inflater.inflate(R.layout.fragment_create_new_profie, container, false)
 
         view.Submit.setOnClickListener {
+            val action=create_newProfieDirections.actionCreateNewProfieToProfile()
+            action.emailtoken=Registrationno.text.toString()
             db= FirebaseFirestore.getInstance()
-            view.Submit.setOnClickListener {
-                if(checking()){
-                    var name=Name.text.toString()
-                    var phone=Phone.text.toString()
-                    var semester=registerSemester.text.toString()
-                    var branch=registerBranch.text.toString()
-                    var address=registerAddress.text.toString()
-                    val regno=Registrationno.text.toString()
+            if(checking()){
+                var name=Name.text.toString()
+                var phone=Phone.text.toString()
+                var semester=registerSemester.text.toString()
+                var branch=registerBranch.text.toString()
+                var address=registerAddress.text.toString()
+                val regno=Registrationno.text.toString()
 
-                    val student= hashMapOf(
-                        "Name" to name,
-                        "Phone" to phone,
-                        "Semester" to semester,
-                        "Branch" to branch,
-                        "Address" to address,
-                        "Registration No" to regno
-                    )
-                    val students=db.collection("STUDENTS")
-                    students.document(regno).set(student)
-                        .addOnSuccessListener {
-                            Toast.makeText(activity?.applicationContext,"Uploaded",Toast.LENGTH_SHORT).show()
-                        }
+                val student= hashMapOf(
+                    "Name" to name,
+                    "Phone" to phone,
+                    "Semester" to semester,
+                    "Branch" to branch,
+                    "Address" to address,
+                    "Registration No" to regno
+                )
+                val students=db.collection("STUDENTS")
+                students.document(regno).set(student)
+                    .addOnSuccessListener {
+                        Toast.makeText(activity?.applicationContext,"Uploaded",Toast.LENGTH_SHORT).show()
+                    }
                 }
-            }
-
-            findNavController().navigate(R.id.action_create_newProfie_to_profile)
+            Navigation.findNavController(view).navigate(action)
         }
         return view
     }

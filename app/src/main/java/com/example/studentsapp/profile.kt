@@ -7,35 +7,29 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_profile.view.*
 
 
 class profile : Fragment() {
     private lateinit var db: FirebaseFirestore
+    val args:profileArgs by navArgs()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        val regno=args.emailtoken
         val view= inflater.inflate(R.layout.fragment_profile, container, false)
         db= FirebaseFirestore.getInstance()
 
         view.Edit.setOnClickListener {
             findNavController().navigate(R.id.action_profile_to_create_newProfie)
         }
-
-
-
-
-
-
-        val docref = db.collection("USERS").document("rajatnayak1582002@gmail.com")
+        val docref = db.collection("STUDENTS").document(regno)
         if (docref != null) {
             docref.get()
                 .addOnSuccessListener {
@@ -45,8 +39,8 @@ class profile : Fragment() {
                         view.Branch.text=document["Branch"].toString()
                         view.Phoneno.text=document["Phone"].toString()
                         view.address.text=document["Address"].toString()
-                        view.Email.text=document["email"].toString()
-
+                        view.Name.text=document["Name"].toString()
+                        view.regno.text=document["Registration No"].toString()
                     }
                 }
         }
