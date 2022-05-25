@@ -4,8 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.viewModels
-import androidx.lifecycle.Observer
+import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_sign_up.*
@@ -13,7 +12,6 @@ import kotlinx.android.synthetic.main.activity_sign_up.*
 class SignUp : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
-    var bundle = Bundle()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
@@ -26,16 +24,10 @@ class SignUp : AppCompatActivity() {
                 var password= PasswordRegister.text.toString()
                 var name=Name.text.toString()
                 var phone=Phone.text.toString()
-                var semester=registerSemester.text.toString()
-                var branch=registerBranch.text.toString()
-                var address = registerAddress.text.toString()
                 val user= hashMapOf(
                     "Name" to name,
                     "Phone" to phone,
-                    "email" to email,
-                    "Semester" to semester,
-                    "Branch" to branch,
-                    "Address" to address
+                    "email" to email
                 )
                 val Users=db.collection("USERS")
                 val query =Users.whereEqualTo("email",email).get()
@@ -49,7 +41,6 @@ class SignUp : AppCompatActivity() {
                                     if(task.isSuccessful)
                                     {
                                         Users.document(email).set(user)
-                                        bundle.putString("Email",email)
                                         val intent=Intent(this,Signin::class.java)
                                         intent.putExtra("email",email)
                                         startActivity(intent)
@@ -74,6 +65,7 @@ class SignUp : AppCompatActivity() {
             }
         }
     }
+
 
 
     private fun checking():Boolean{

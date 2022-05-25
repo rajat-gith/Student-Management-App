@@ -49,7 +49,14 @@
         android:id="@+id/profile"
         android:name="com.example.studentsapp.profile"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile_to_create_newProfie"
+            app:destination="@id/create_newProfie" />
+        <argument
+            android:name="Emailtoken"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/deptpage_for_student"
         android:name="com.example.studentsapp.deptpage_for_student"
@@ -58,5 +65,14 @@
         <argument
             android:name="branchname"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/create_newProfie"
+        android:name="com.example.studentsapp.create_newProfie"
+        android:label="fragment_create_new_profie"
+        tools:layout="@layout/fragment_create_new_profie" >
+        <action
+            android:id="@+id/action_create_newProfie_to_profile"
+            app:destination="@id/profile" />
     </fragment>
 </navigation>

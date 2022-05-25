@@ -8,7 +8,7 @@
         <entry key="..\:/StudentsApp/app/src/main/res/drawable/plane_rectangle.xml" value="0.17743055555555556" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.15789473684210525" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/activity_admin_login.xml" value="0.15789473684210525" />
-        <entry key="..\:/StudentsApp/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/activity_sign_up.xml" value="0.176" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/activity_signin.xml" value="0.14901315789473685" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.15789473684210525" />
@@ -19,12 +19,13 @@
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_admin_dept_page.xml" value="0.2368659420289855" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_admin_login.xml" value="0.15789473684210525" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_admin_panel.xml" value="0.15789473684210525" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_create_new_profie.xml" value="0.25" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_create_notice.xml" value="0.15789473684210525" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_department_descriptiom.xml" value="0.152" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_deptpage_for_student.xml" value="0.264" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_faculty.xml" value="0.16666666666666666" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_home.xml" value="0.2985842985842986" />
-        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_profile.xml" value="0.4" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_signin.xml" value="0.25" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_signup.xml" value="0.2" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_splash_screen.xml" value="0.136" />
