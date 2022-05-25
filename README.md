@@ -2,7 +2,7 @@
 The app contains two sites
 1. Student Site
 2. Admin Site
-Android Topics Used:
+<br>Android Topics Used:
 1. Firebase Authentication
 2. Firebase Storage
 3. Firebase Database
