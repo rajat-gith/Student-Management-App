@@ -45,6 +45,7 @@
             app:layout_constraintVertical_bias="0.53">
 
             <TextView
+                android:id="@+id/b1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
@@ -72,6 +73,7 @@
             app:layout_constraintTop_toBottomOf="@+id/CHE">
 
             <TextView
+                android:id="@+id/b2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
@@ -97,6 +99,7 @@
             app:layout_constraintTop_toBottomOf="@+id/CE">
 
             <TextView
+                android:id="@+id/b3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
@@ -122,6 +125,7 @@
             app:layout_constraintTop_toBottomOf="@+id/CSE">
 
             <TextView
+                android:id="@+id/b4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
@@ -147,6 +151,7 @@
             app:layout_constraintTop_toBottomOf="@+id/EE">
 
             <TextView
+                android:id="@+id/b5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
@@ -172,6 +177,7 @@
             app:layout_constraintTop_toBottomOf="@+id/EEE">
 
             <TextView
+                android:id="@+id/b6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
@@ -197,6 +203,7 @@
             app:layout_constraintTop_toBottomOf="@+id/ETC">
 
             <TextView
+                android:id="@+id/b7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
@@ -222,6 +229,7 @@
             app:layout_constraintTop_toBottomOf="@+id/IT">
 
             <TextView
+                android:id="@+id/b8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
@@ -247,6 +255,7 @@
             app:layout_constraintTop_toBottomOf="@+id/ME">
 
             <TextView
+                android:id="@+id/b9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
@@ -271,6 +280,7 @@
             app:layout_constraintTop_toBottomOf="@+id/MME">
 
             <TextView
+                android:id="@+id/b10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"

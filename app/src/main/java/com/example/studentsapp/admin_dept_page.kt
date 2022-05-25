@@ -26,43 +26,43 @@ class admin_dept_page : Fragment() {
         val view= inflater.inflate(R.layout.fragment_admin_dept_page, container, false)
 
         view.CHE.setOnClickListener {
-            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b1.toString())
+            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b1.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
         view.CE.setOnClickListener {
-            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b2.toString())
+            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b2.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
         view.CSE.setOnClickListener {
-            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b3.toString())
+            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b3.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
         view.EE.setOnClickListener {
-            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b4.toString())
+            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b4.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
         view.EEE.setOnClickListener {
-            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b5.toString())
+            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b5.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
         view.ETC.setOnClickListener {
-            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b6.toString())
+            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b6.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
         view.IT.setOnClickListener {
-            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b7.toString())
+            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b7.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
         view.ME.setOnClickListener {
-            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b8.toString())
+            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b8.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
         view.MME.setOnClickListener {
-            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b9.toString())
+            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b9.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
         view.PE.setOnClickListener {
-            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b10.toString())
+            val action=admin_dept_pageDirections.actionAdminDeptPageToDepartmentDescriptiom(view.b10.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
 

@@ -21,7 +21,34 @@ class faculty : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view= inflater.inflate(R.layout.fragment_faculty, container, false)
+        view.CHE.setOnClickListener {
+            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+        }
         view.CE.setOnClickListener {
+            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+        }
+        view.CSE.setOnClickListener {
+            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+        }
+        view.EE.setOnClickListener {
+            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+        }
+        view.EEE.setOnClickListener {
+            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+        }
+        view.ETC.setOnClickListener {
+            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+        }
+        view.IT.setOnClickListener {
+            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+        }
+        view.ME.setOnClickListener {
+            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+        }
+        view.MME.setOnClickListener {
+            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+        }
+        view.PE.setOnClickListener {
             findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
         }
         return view
