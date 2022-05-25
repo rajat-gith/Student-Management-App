@@ -14,14 +14,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#072E69">
+                <ImageView
+                    android:id="@+id/logout"
+                    android:layout_width="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_gravity="right"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_exit_to_app_24" />
+            </androidx.cardview.widget.CardView>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Notice Panel"
                 android:fontFamily="@font/poppins"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:gravity="fill_vertical"
-                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:layout_margin="20dp"
                 android:background="@drawable/plane_rectangle"

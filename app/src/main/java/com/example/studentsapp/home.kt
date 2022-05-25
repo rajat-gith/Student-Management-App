@@ -35,7 +35,7 @@ class home : Fragment() {
         getnoticedata()
 
         view.academic_button.setOnClickListener {
-            findNavController().navigate(R.id.action_home2_to_faculty)
+            findNavController().navigate(R.id.action_home2_to_academic)
         }
         view.non_academic_button.setOnClickListener {
             findNavController().navigate(R.id.action_home2_to_non_academic)

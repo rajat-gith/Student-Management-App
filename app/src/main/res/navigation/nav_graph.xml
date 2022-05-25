@@ -26,7 +26,11 @@
         android:id="@+id/academic"
         android:name="com.example.studentsapp.academic"
         android:label="fragment_academic"
-        tools:layout="@layout/fragment_academic" />
+        tools:layout="@layout/fragment_academic" >
+        <action
+            android:id="@+id/action_academic_to_faculty"
+            app:destination="@id/faculty" />
+    </fragment>
     <fragment
         android:id="@+id/non_academic"
         android:name="com.example.studentsapp.non_academic"
@@ -42,19 +46,10 @@
             app:destination="@id/deptpage_for_student" />
     </fragment>
     <fragment
-        android:id="@+id/profile_details"
-        android:name="com.example.studentsapp.profile_details"
-        android:label="fragment_profile_details"
-        tools:layout="@layout/fragment_profile_details" />
-    <fragment
         android:id="@+id/profile"
         android:name="com.example.studentsapp.profile"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
-        <action
-            android:id="@+id/action_profile_to_profile_details"
-            app:destination="@id/profile_details" />
-    </fragment>
+        tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/deptpage_for_student"
         android:name="com.example.studentsapp.deptpage_for_student"

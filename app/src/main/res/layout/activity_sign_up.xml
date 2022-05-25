@@ -19,7 +19,7 @@
         android:hint="Name"
         android:inputType="textPersonName"
         android:padding="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/Phone"
+        app:layout_constraintBottom_toTopOf="@+id/registerSemester"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,25 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Name" />
-
-    <EditText
-        android:id="@+id/EmailRegister"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/custom_input"
-        android:elevation="15dp"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="textEmailAddress"
-        android:padding="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/PasswordRegister"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Phone" />
+        app:layout_constraintTop_toBottomOf="@+id/registerAddress" />
 
     <EditText
         android:id="@+id/PasswordRegister"
@@ -85,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="52dp"
         android:background="@drawable/custom_input"
         android:text="Register"
         android:textAllCaps="false"
@@ -95,12 +77,84 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PasswordRegister" />
 
+    <EditText
+        android:id="@+id/EmailRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/custom_input"
+        android:elevation="15dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textEmailAddress"
+        android:padding="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/PasswordRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Phone" />
+
+    <EditText
+        android:id="@+id/registerSemester"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/custom_input"
+        android:elevation="15dp"
+        android:ems="10"
+        android:hint="Semester"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/registerBranch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Name" />
+
+    <EditText
+        android:id="@+id/registerBranch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/custom_input"
+        android:elevation="15dp"
+        android:ems="10"
+        android:hint="Branch"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/registerAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerSemester" />
+
+    <EditText
+        android:id="@+id/registerAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/custom_input"
+        android:elevation="15dp"
+        android:ems="10"
+        android:hint="Address"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/Phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerBranch" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="sans-serif"
         android:text="Register"
         android:textColor="#072E69"
@@ -108,7 +162,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/Name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread" />
 </androidx.constraintlayout.widget.ConstraintLayout>
