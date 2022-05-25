@@ -10,10 +10,6 @@ import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_admin_dept_page.view.*
 
 class admin_dept_page : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

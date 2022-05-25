@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
@@ -12,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_deptpage_for_student.view.*
 
 
 class deptpage_for_student : Fragment() {
-
+    val args:deptpage_for_studentArgs by navArgs()
     private lateinit var dbref:DatabaseReference
     private lateinit var faculty_recyclerview:RecyclerView
     private lateinit var facultylist:ArrayList<department_card>
@@ -25,6 +26,7 @@ class deptpage_for_student : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val view= inflater.inflate(R.layout.fragment_deptpage_for_student, container, false)
         faculty_recyclerview=view.faculty_recyclerview
         faculty_recyclerview.layoutManager=LinearLayoutManager(this.context)
@@ -34,7 +36,8 @@ class deptpage_for_student : Fragment() {
     }
 
     private fun getfacultydata() {
-        dbref=FirebaseDatabase.getInstance().getReference("Faculties")
+        val branchname=args.branchname
+        dbref=FirebaseDatabase.getInstance().getReference("Faculties of $branchname")
         dbref.addValueEventListener(object:ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()){

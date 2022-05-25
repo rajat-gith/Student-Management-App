@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_faculty.view.*
 
@@ -21,35 +22,46 @@ class faculty : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view= inflater.inflate(R.layout.fragment_faculty, container, false)
+        val action=facultyDirections.actionFacultyToDeptpageForStudent(view.b1.text.toString())
         view.CHE.setOnClickListener {
-            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+            val action=facultyDirections.actionFacultyToDeptpageForStudent(view.b1.text.toString())
+            Navigation.findNavController(view).navigate(action)
         }
         view.CE.setOnClickListener {
-            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+            val action=facultyDirections.actionFacultyToDeptpageForStudent(view.b2.text.toString())
+            Navigation.findNavController(view).navigate(action)
         }
         view.CSE.setOnClickListener {
-            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+            val action=facultyDirections.actionFacultyToDeptpageForStudent(view.b3.text.toString())
+            Navigation.findNavController(view).navigate(action)
         }
         view.EE.setOnClickListener {
-            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+            val action=facultyDirections.actionFacultyToDeptpageForStudent(view.b4.text.toString())
+            Navigation.findNavController(view).navigate(action)
         }
         view.EEE.setOnClickListener {
-            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+            val action=facultyDirections.actionFacultyToDeptpageForStudent(view.b5.text.toString())
+            Navigation.findNavController(view).navigate(action)
         }
         view.ETC.setOnClickListener {
-            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+            val action=facultyDirections.actionFacultyToDeptpageForStudent(view.b6.text.toString())
+            Navigation.findNavController(view).navigate(action)
         }
         view.IT.setOnClickListener {
-            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+            val action=facultyDirections.actionFacultyToDeptpageForStudent(view.b7.text.toString())
+            Navigation.findNavController(view).navigate(action)
         }
         view.ME.setOnClickListener {
-            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+            val action=facultyDirections.actionFacultyToDeptpageForStudent(view.b8.text.toString())
+            Navigation.findNavController(view).navigate(action)
         }
         view.MME.setOnClickListener {
-            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+            val action=facultyDirections.actionFacultyToDeptpageForStudent(view.b9.text.toString())
+            Navigation.findNavController(view).navigate(action)
         }
         view.PE.setOnClickListener {
-            findNavController().navigate(R.id.action_faculty_to_deptpage_for_student)
+            val action=facultyDirections.actionFacultyToDeptpageForStudent(view.b10.text.toString())
+            Navigation.findNavController(view).navigate(action)
         }
         return view
     }

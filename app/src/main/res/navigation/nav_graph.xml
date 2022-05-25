@@ -59,5 +59,9 @@
         android:id="@+id/deptpage_for_student"
         android:name="com.example.studentsapp.deptpage_for_student"
         android:label="fragment_deptpage_for_student"
-        tools:layout="@layout/fragment_deptpage_for_student" />
+        tools:layout="@layout/fragment_deptpage_for_student" >
+        <argument
+            android:name="branchname"
+            app:argType="string" />
+    </fragment>
 </navigation>

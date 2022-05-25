@@ -17,6 +17,7 @@
         android:fontFamily="@font/poppins"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:minHeight="48dp"
         android:text="Sample text"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/cardView13"
