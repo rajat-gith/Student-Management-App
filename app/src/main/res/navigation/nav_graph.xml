@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/home2">
+    app:startDestination="@id/splashscrren_fragment">
     <fragment
         android:id="@+id/home2"
         android:name="com.example.studentsapp.home"
@@ -59,6 +59,51 @@
             android:defaultValue="Your_Name" />
     </fragment>
     <fragment
+        android:id="@+id/create_notice"
+        android:name="com.example.studentsapp.create_notice"
+        android:label="fragment_create_notice"
+        tools:layout="@layout/fragment_create_notice">
+        <action
+            android:id="@+id/action_create_notice_to_admin_panel"
+            app:destination="@id/admin_panel" />
+    </fragment>
+    <fragment
+        android:id="@+id/admin_panel"
+        android:name="com.example.studentsapp.admin_panel"
+        android:label="fragment_admin_panel"
+        tools:layout="@layout/fragment_admin_panel">
+        <action
+            android:id="@+id/action_admin_panel_to_create_notice"
+            app:destination="@id/create_notice" />
+        <action
+            android:id="@+id/action_admin_panel_to_admin_dept_page2"
+            app:destination="@id/admin_dept_page" />
+    </fragment>
+    <fragment
+        android:id="@+id/admin_dept_page"
+        android:name="com.example.studentsapp.admin_dept_page"
+        android:label="fragment_admin_dept_page"
+        tools:layout="@layout/fragment_admin_dept_page">
+        <action
+            android:id="@+id/action_admin_dept_page_to_department_descriptiom"
+            app:destination="@id/department_descriptiom" />
+        <action
+            android:id="@+id/action_admin_dept_page_to_admin_panel"
+            app:destination="@id/admin_panel" />
+    </fragment>
+    <fragment
+        android:id="@+id/department_descriptiom"
+        android:name="com.example.studentsapp.Department_descriptiom"
+        android:label="fragment_department_descriptiom"
+        tools:layout="@layout/fragment_department_descriptiom">
+        <action
+            android:id="@+id/action_department_descriptiom_to_admin_dept_page"
+            app:destination="@id/admin_dept_page" />
+        <argument
+            android:name="department_name"
+            app:argType="string" />
+    </fragment>
+    <fragment
         android:id="@+id/deptpage_for_student"
         android:name="com.example.studentsapp.deptpage_for_student"
         android:label="fragment_deptpage_for_student"
@@ -75,5 +120,47 @@
         <action
             android:id="@+id/action_create_newProfie_to_profile"
             app:destination="@id/profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/signin_fragment"
+        android:name="com.example.studentsapp.signin_fragment"
+        android:label="fragment_signin_fragment"
+        tools:layout="@layout/fragment_signin_fragment" >
+        <action
+            android:id="@+id/action_signin_fragment_to_signup_fragment"
+            app:destination="@id/signup_fragment" />
+        <action
+            android:id="@+id/action_signin_fragment_to_home2"
+            app:destination="@id/home2" />
+        <action
+            android:id="@+id/action_signin_fragment_to_admin_login_fragment"
+            app:destination="@id/admin_login_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signup_fragment"
+        android:name="com.example.studentsapp.signup_fragment"
+        android:label="fragment_signup_fragment"
+        tools:layout="@layout/fragment_signup_fragment" >
+        <action
+            android:id="@+id/action_signup_fragment_to_signin_fragment"
+            app:destination="@id/signin_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashscrren_fragment"
+        android:name="com.example.studentsapp.splashscrren_fragment"
+        android:label="fragment_splashscrren_fragment"
+        tools:layout="@layout/fragment_splashscrren_fragment" >
+        <action
+            android:id="@+id/action_splashscrren_fragment_to_signin_fragment"
+            app:destination="@id/signin_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/admin_login_fragment"
+        android:name="com.example.studentsapp.admin_login_fragment"
+        android:label="fragment_admin_login_fragment"
+        tools:layout="@layout/fragment_admin_login_fragment" >
+        <action
+            android:id="@+id/action_admin_login_fragment_to_admin_panel"
+            app:destination="@id/admin_panel" />
     </fragment>
 </navigation>

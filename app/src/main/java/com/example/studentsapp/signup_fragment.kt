@@ -1,29 +1,40 @@
 package com.example.studentsapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_sign_up.*
+import kotlinx.android.synthetic.main.fragment_signup_fragment.*
+import kotlinx.android.synthetic.main.fragment_signup_fragment.view.*
 
-class SignUp : AppCompatActivity() {
+class signup_fragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up)
+
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view=inflater.inflate(R.layout.fragment_signup_fragment, container, false)
         auth= FirebaseAuth.getInstance()
         db= FirebaseFirestore.getInstance()
-        button.setOnClickListener {
+        view.button.setOnClickListener {
             if(checking())
             {
-                var email=EmailRegister.text.toString()
-                var password= PasswordRegister.text.toString()
-                var name=Name.text.toString()
-                var phone=Phone.text.toString()
+                var email=view.EmailRegister.text.toString()
+                var password= view.PasswordRegister.text.toString()
+                var name=view.Name.text.toString()
+                var phone=view.Phone.text.toString()
                 val user= hashMapOf(
                     "Name" to name,
                     "Phone" to phone,
@@ -36,38 +47,32 @@ class SignUp : AppCompatActivity() {
                         if(tasks.isEmpty)
                         {
                             auth.createUserWithEmailAndPassword(email,password)
-                                .addOnCompleteListener(this){
+                                .addOnCompleteListener(requireActivity()){
                                         task->
                                     if(task.isSuccessful)
                                     {
                                         Users.document(email).set(user)
-                                        val intent=Intent(this,Signin::class.java)
-                                        intent.putExtra("email",email)
-                                        startActivity(intent)
-                                        finish()
+                                        findNavController().navigate(R.id.action_signup_fragment_to_signin_fragment)
                                     }
                                     else
                                     {
-                                        Toast.makeText(this,"Authentication Failed", Toast.LENGTH_LONG).show()
+                                        Toast.makeText(activity?.applicationContext,"Authentication Failed", Toast.LENGTH_LONG).show()
                                     }
                                 }
                         }
                         else
                         {
-                            Toast.makeText(this,"User Already Registered", Toast.LENGTH_LONG).show()
-                            val intent= Intent(this,MainActivity::class.java)
-                            startActivity(intent)
+                            Toast.makeText(activity?.applicationContext,"User Already Registered", Toast.LENGTH_LONG).show()
+                            findNavController().navigate(R.id.action_signup_fragment_to_signin_fragment)
                         }
                     }
             }
             else{
-                Toast.makeText(this,"Enter the Details", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity?.applicationContext,"Enter the Details", Toast.LENGTH_LONG).show()
             }
         }
+        return view
     }
-
-
-
     private fun checking():Boolean{
         if(Name.text.toString().trim{it<=' '}.isNotEmpty()
             && Phone.text.toString().trim{it<=' '}.isNotEmpty()

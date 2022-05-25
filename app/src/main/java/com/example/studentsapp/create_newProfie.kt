@@ -9,8 +9,7 @@ import android.widget.Toast
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_sign_up.*
-import kotlinx.android.synthetic.main.activity_signin.*
+
 import kotlinx.android.synthetic.main.fragment_create_new_profie.*
 import kotlinx.android.synthetic.main.fragment_create_new_profie.Name
 import kotlinx.android.synthetic.main.fragment_create_new_profie.Phone
