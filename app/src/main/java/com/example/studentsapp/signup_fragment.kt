@@ -25,6 +25,7 @@ class signup_fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val view=inflater.inflate(R.layout.fragment_signup_fragment, container, false)
         auth= FirebaseAuth.getInstance()
         db= FirebaseFirestore.getInstance()
@@ -35,10 +36,18 @@ class signup_fragment : Fragment() {
                 var password= view.PasswordRegister.text.toString()
                 var name=view.Name.text.toString()
                 var phone=view.Phone.text.toString()
+                var regno=view.Registrationno.text.toString()
+                var branch=view.registerBranch.text.toString()
+                var address=view.registerAddress.text.toString()
+                var semester=view.registerSemester.text.toString()
                 val user= hashMapOf(
                     "Name" to name,
                     "Phone" to phone,
-                    "email" to email
+                    "email" to email,
+                    "Reg_no" to regno,
+                    "Branch" to branch,
+                    "Address" to address,
+                    "Semester" to semester
                 )
                 val Users=db.collection("USERS")
                 val query =Users.whereEqualTo("email",email).get()
@@ -51,7 +60,7 @@ class signup_fragment : Fragment() {
                                         task->
                                     if(task.isSuccessful)
                                     {
-                                        Users.document(email).set(user)
+                                        Users.document(regno).set(user)
                                         findNavController().navigate(R.id.action_signup_fragment_to_signin_fragment)
                                     }
                                     else
@@ -78,8 +87,11 @@ class signup_fragment : Fragment() {
             && Phone.text.toString().trim{it<=' '}.isNotEmpty()
             && EmailRegister.text.toString().trim{it<=' '}.isNotEmpty()
             && PasswordRegister.text.toString().trim{it<=' '}.isNotEmpty()
-        )
-        {
+            && Registrationno.text.toString().trim{it<=' '}.isNotEmpty()
+            && registerBranch.text.toString().trim{it<=' '}.isNotEmpty()
+            && registerAddress.text.toString().trim{it<=' '}.isNotEmpty()
+            && registerSemester.text.toString().trim{it<=' '}.isNotEmpty()
+        ){
             return true
         }
         return false

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/home2"
-    android:title   ="Home"
+    android:title="Home"
     android:iconTint="@color/white"
     android:icon="@drawable/ic_baseline_home_24"/>
 
@@ -10,6 +9,4 @@
         android:iconTint="@color/white"
         android:icon="@drawable/ic_baseline_person_24"/>
 
-    <item android:title="Sign Out"
-        android:icon="@drawable/ic_baseline_exit_to_app_24"/>
 </menu>
