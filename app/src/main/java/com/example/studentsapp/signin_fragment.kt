@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_signin_fragment.*
@@ -33,11 +34,12 @@ class signin_fragment : Fragment() {
             if(checking()){
                 val email=view.email.text.toString()
                 val password= view.password.text.toString()
-                val action=signin_fragmentDirections.actionSigninFragmentToProfile(email)
+                val action=signin_fragmentDirections.actionSigninFragmentToHome2()
+                action.emailaddress = email // your value
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(requireActivity()) { task ->
                         if (task.isSuccessful) {
-                            findNavController().navigate(R.id.action_signin_fragment_to_home2)
+                            Navigation.findNavController(view).navigate(action)
                         } else {
                             Toast.makeText(activity?.applicationContext, "Wrong Details", Toast.LENGTH_LONG).show()
                         }

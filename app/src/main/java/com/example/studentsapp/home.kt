@@ -21,11 +21,13 @@ import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import java.util.jar.Manifest
 import android.hardware.SensorManager
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 import kotlinx.android.synthetic.main.fragment_admin_panel.view.*
 
 
 class home : Fragment(),Notice_Adapter.OnItemClickListener {
-
+    val args:homeArgs by navArgs()
     private lateinit var dbref:DatabaseReference
     private lateinit var notice_recyclerview:RecyclerView
     private lateinit var noticelist:ArrayList<Notice_card>
@@ -42,7 +44,7 @@ class home : Fragment(),Notice_Adapter.OnItemClickListener {
         savedInstanceState: Bundle?
     ): View? {
         val view= inflater.inflate(R.layout.fragment_home, container, false)
-
+        val action=homeDirections.actionHome2ToProfile(args.emailaddress.toString())
         notice_recyclerview=view.notice_recycler_view
         notice_recyclerview.layoutManager=LinearLayoutManager(this.context)
         noticelist= arrayListOf<Notice_card>()
@@ -54,6 +56,9 @@ class home : Fragment(),Notice_Adapter.OnItemClickListener {
         }
         view.non_academic_button.setOnClickListener {
             findNavController().navigate(R.id.action_home2_to_non_academic)
+        }
+        view.top_bar.setOnClickListener {
+            Navigation.findNavController(view).navigate(action)
         }
         return view
 

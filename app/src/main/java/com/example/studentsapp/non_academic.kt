@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_non_academic.*
 import kotlinx.android.synthetic.main.fragment_non_academic.view.*
 
@@ -54,7 +55,9 @@ class non_academic : Fragment() {
             val action=non_academicDirections.actionNonAcademicToNonTechDesc(sam_t1.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
-
+        view.top_bar.setOnClickListener {
+            findNavController().navigate(R.id.action_non_academic_to_home2)
+        }
         return view
     }
 

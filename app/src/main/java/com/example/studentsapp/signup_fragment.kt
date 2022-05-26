@@ -60,7 +60,7 @@ class signup_fragment : Fragment() {
                                         task->
                                     if(task.isSuccessful)
                                     {
-                                        Users.document(regno).set(user)
+                                        Users.document(email).set(user)
                                         findNavController().navigate(R.id.action_signup_fragment_to_signin_fragment)
                                     }
                                     else

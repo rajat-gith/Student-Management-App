@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,6 +29,9 @@ class deptpage_for_student : Fragment() {
     ): View? {
 
         val view= inflater.inflate(R.layout.fragment_deptpage_for_student, container, false)
+        view.top_bar1.setOnClickListener {
+            findNavController().navigate(R.id.action_deptpage_for_student_to_home2)
+        }
         faculty_recyclerview=view.faculty_recyclerview
         faculty_recyclerview.layoutManager=LinearLayoutManager(this.context)
         facultylist= arrayListOf<department_card>()

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
@@ -25,6 +26,9 @@ class non_tech_desc : Fragment() {
     ): View? {
         val view= inflater.inflate(R.layout.fragment_non_tech_desc, container, false)
         val admin_domain=args.domainName
+        view.top_bar1.setOnClickListener {
+            findNavController().navigate(R.id.action_non_tech_desc_to_home2)
+        }
         dbref = FirebaseDatabase.getInstance().getReference("$admin_domain domain")
         dbref.addValueEventListener(object :ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {

@@ -24,6 +24,9 @@ class academic : Fragment() {
         dept_card.setOnClickListener {
             findNavController().navigate(R.id.action_academic_to_faculty)
         }
+        view.top_bar1.setOnClickListener {
+            findNavController().navigate(R.id.action_academic_to_home2)
+        }
         return view
     }
 

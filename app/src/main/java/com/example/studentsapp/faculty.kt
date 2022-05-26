@@ -22,6 +22,9 @@ class faculty : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view= inflater.inflate(R.layout.fragment_faculty, container, false)
+        view.top_bar1.setOnClickListener {
+            findNavController().navigate(R.id.action_faculty_to_home2)
+        }
         val action=facultyDirections.actionFacultyToDeptpageForStudent(view.b1.text.toString())
         view.CHE.setOnClickListener {
             val action=facultyDirections.actionFacultyToDeptpageForStudent(view.b1.text.toString())
