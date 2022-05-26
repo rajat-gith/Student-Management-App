@@ -9,6 +9,7 @@ The app contains two sites
 4. Firebase Realtime Database
 5. Navigation Component
 6. Recycler View
+7. Download Manager
 
 The admin site can login with the help of a special code,username & Password<br>
 Admin username:-admin_app@gmail.com<br>
@@ -22,5 +23,5 @@ The student can get notice pdf uploaded from admin site and is possible due to f
 The user can see download timetable and rules and regulations pdf also uploaded from admin site.
 The student can see the department page in which there is information regarding departments and list of faculties.<br>
 The admin can add new faculties and alter pre-written department introduction.
-![image](https://user-images.githubusercontent.com/78889786/170191308-d59b0f1a-4d80-4e26-b030-7659f5e02b6d.png)
+![image](https://user-images.githubusercontent.com/78889786/170542123-42200d90-5d33-48eb-8e10-5cd8b538dce2.png)
 
