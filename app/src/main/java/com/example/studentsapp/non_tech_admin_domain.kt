@@ -10,6 +10,7 @@ import androidx.navigation.fragment.navArgs
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_non_tech_admin_domain.*
+import kotlinx.android.synthetic.main.fragment_non_tech_admin_domain.view.*
 
 
 class non_tech_admin_domain : Fragment() {
@@ -26,7 +27,7 @@ class non_tech_admin_domain : Fragment() {
     ): View? {
         val view= inflater.inflate(R.layout.fragment_non_tech_admin_domain, container, false)
         val admin_domain=args.domainAdminName
-        upload.setOnClickListener {
+        view.upload.setOnClickListener {
             val domain_desc=admin_domain_desc.text.toString()
             database=FirebaseDatabase.getInstance().getReference("$admin_domain domain")
             val domain=domain_data_admin(domain_desc)

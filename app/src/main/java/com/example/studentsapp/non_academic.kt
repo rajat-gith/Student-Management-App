@@ -26,32 +26,32 @@ class non_academic : Fragment() {
             val action=non_academicDirections.actionNonAcademicToNonTechDesc(Rs_t.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
-        view.ENIGMA.setOnClickListener {
+        view.enigma.setOnClickListener {
             val action=non_academicDirections.actionNonAcademicToNonTechDesc(E_t.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
-        view.IIC.setOnClickListener {
-            val action=non_academicDirections.actionNonAcademicToNonTechDesc(iic_t.text.toString())
+        view.iic1.setOnClickListener {
+            val action=non_academicDirections.actionNonAcademicToNonTechDesc(iic_t1.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
-        view.vc.setOnClickListener {
+        view.vc1.setOnClickListener {
             val action=non_academicDirections.actionNonAcademicToNonTechDesc(vc_t.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
-        view.dance.setOnClickListener {
-            val action=non_academicDirections.actionNonAcademicToNonTechDesc(vib_t.text.toString())
+        view.dance1.setOnClickListener {
+            val action=non_academicDirections.actionNonAcademicToNonTechDesc(vib_t1.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
-        view.souls.setOnClickListener {
-            val action=non_academicDirections.actionNonAcademicToNonTechDesc(sou_t.text.toString())
+        view.souls1.setOnClickListener {
+            val action=non_academicDirections.actionNonAcademicToNonTechDesc(sou_t1.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
-        view.sports.setOnClickListener {
-            val action=non_academicDirections.actionNonAcademicToNonTechDesc(spo_t.text.toString())
+        view.sports1.setOnClickListener {
+            val action=non_academicDirections.actionNonAcademicToNonTechDesc(spo_t1.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
-        view.samavesh.setOnClickListener {
-            val action=non_academicDirections.actionNonAcademicToNonTechDesc(sam_t.text.toString())
+        view.samavesh1.setOnClickListener {
+            val action=non_academicDirections.actionNonAcademicToNonTechDesc(sam_t1.text.toString())
             Navigation.findNavController(view).navigate(action)
         }
 

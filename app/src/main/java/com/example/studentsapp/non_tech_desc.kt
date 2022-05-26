@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
+import com.google.firebase.database.DatabaseReference
 
 
 class non_tech_desc : Fragment() {
     val args:non_tech_descArgs by navArgs()
+    private lateinit var dbref: DatabaseReference
     private var param1: String? = null
     private var param2: String? = null
 

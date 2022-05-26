@@ -16,6 +16,7 @@
         android:gravity="start|top"
         android:hint="Enter the Desc"
         android:inputType="textMultiLine"
+        android:minHeight="48dp"
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/upload"
         app:layout_constraintStart_toStartOf="parent"

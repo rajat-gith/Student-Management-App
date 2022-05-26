@@ -24,6 +24,10 @@ class admin_panel : Fragment() {
 
         val dept=view.department
         val notice_card=view.notice_card
+
+        view.non_tech.setOnClickListener {
+            findNavController().navigate(R.id.action_admin_panel_to_non_tech_admin_panel)
+        }
         dept.setOnClickListener {
             findNavController().navigate(R.id.action_admin_panel_to_admin_dept_page)
         }

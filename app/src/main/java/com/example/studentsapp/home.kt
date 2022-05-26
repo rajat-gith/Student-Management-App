@@ -21,9 +21,7 @@ import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import java.util.jar.Manifest
 import android.hardware.SensorManager
-
-
-
+import kotlinx.android.synthetic.main.fragment_admin_panel.view.*
 
 
 class home : Fragment(),Notice_Adapter.OnItemClickListener {

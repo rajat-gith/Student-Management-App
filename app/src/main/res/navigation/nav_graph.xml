@@ -39,9 +39,6 @@
         <action
             android:id="@+id/action_non_academic_to_non_tech_desc"
             app:destination="@id/non_tech_desc" />
-        <action
-            android:id="@+id/action_non_academic_to_non_tech_admin_domain"
-            app:destination="@id/non_tech_admin_domain" />
     </fragment>
     <fragment
         android:id="@+id/faculty"
@@ -175,8 +172,8 @@
             android:id="@+id/action_admin_panel_to_create_notice"
             app:destination="@id/create_notice" />
         <action
-            android:id="@+id/action_admin_panel_to_non_academic"
-            app:destination="@id/non_academic" />
+            android:id="@+id/action_admin_panel_to_non_tech_admin_panel"
+            app:destination="@id/non_tech_admin_panel" />
     </fragment>
     <fragment
         android:id="@+id/non_tech_desc"
@@ -193,5 +190,20 @@
         tools:layout="@layout/fragment_non_tech_admin_domain" >
         <argument android:name="domain_admin_name"
             app:argType="string" />
+        <action
+            android:id="@+id/action_non_tech_admin_domain_to_non_tech_admin_panel"
+            app:destination="@id/non_tech_admin_panel" />
+    </fragment>
+    <fragment
+        android:id="@+id/non_tech_admin_panel"
+        android:name="com.example.studentsapp.non_tech_admin_panel"
+        android:label="fragment_non_tech_admin_panel"
+        tools:layout="@layout/fragment_non_tech_admin_panel" >
+        <action
+            android:id="@+id/action_non_tech_admin_panel_to_non_tech_admin_domain2"
+            app:destination="@id/non_tech_admin_domain" />
+        <action
+            android:id="@+id/action_non_tech_admin_panel_to_admin_panel"
+            app:destination="@id/admin_panel" />
     </fragment>
 </navigation>
