@@ -10,9 +10,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.fragment_create_notice.*
 import kotlinx.android.synthetic.main.fragment_create_notice.view.*
@@ -25,10 +28,7 @@ import kotlinx.coroutines.withContext
 private const val REQUEST_CODE_IMAGE_PICK = 0
 
 class create_notice : Fragment() {
-    var curFile: Uri? = null
-    private lateinit var url:String
-    val docref = Firebase.storage.reference
-    private lateinit var database:DatabaseReference
+    lateinit var storage : StorageReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -40,59 +40,35 @@ class create_notice : Fragment() {
     ): View? {
         val view= inflater.inflate(R.layout.fragment_create_notice, container, false)
         val upload_button=view.button2
-        val fileicon=view.fileicon
-        val title_field=view.notice_title
-
-
-
-        fileicon.setOnClickListener {
+        storage=FirebaseStorage.getInstance().reference.child("Notices")
+        upload_button.setOnClickListener {
             Intent(Intent.ACTION_GET_CONTENT).also {
                 it.type="application/pdf"
                 startActivityForResult(it, REQUEST_CODE_IMAGE_PICK)
             }
         }
-
-        upload_button.setOnClickListener {
-            val title=title_field.text.toString()
-            database=FirebaseDatabase.getInstance().getReference("Notices")
-            val notice=Notice_card(title)
-            database.child(title).setValue(notice).addOnSuccessListener {
-                Toast.makeText(activity?.applicationContext,"Successfully Saved",Toast.LENGTH_SHORT).show()
-            }
-            uploadImageToStorage(title)
-        }
         return view
-    }
-
-    private fun uploadImageToStorage(filename: String) = CoroutineScope(Dispatchers.IO).launch {
-        try {
-            curFile?.let {
-                docref.child("Notices/$filename").putFile(it).await()
-
-                withContext(Dispatchers.Main) {
-
-                    Toast.makeText(activity?.applicationContext, "Successfully uploaded to Cloud",
-                        Toast.LENGTH_LONG).show()
-                }
-            }
-        } catch (e: Exception) {
-            withContext(Dispatchers.Main) {
-                Toast.makeText(activity?.applicationContext, e.message, Toast.LENGTH_LONG).show()
-            }
-        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE_IMAGE_PICK) {
-            data?.data?.let {
-                curFile = it
-                fileicon.setImageResource(R.drawable.ic_pdf_icon)
-                textView.text=""
-                Toast.makeText(activity?.applicationContext,"File Fetched",Toast.LENGTH_SHORT).show()
+            val noticedata=data!!.data!!
+            val notice_name=notice_name.text.toString()
+            val noticename: StorageReference =storage.child("notice"+noticedata!!.lastPathSegment)
+            noticename.putFile(noticedata).addOnSuccessListener(OnSuccessListener {
+                noticename.downloadUrl.addOnSuccessListener(OnSuccessListener { uri->
+                    val databaseReference:DatabaseReference=FirebaseDatabase.getInstance().getReference("Notices")
+                    val url=uri.toString()
+                    val notice=Notice_card("$notice_name","$url")
+                    databaseReference.child("$notice_name").setValue(notice).addOnSuccessListener {
+                        Toast.makeText(activity?.applicationContext,"Uploaded to Realtime DB",Toast.LENGTH_SHORT).show()
+                    }
+                })
+            })
+
             }
         }
     }
 
 
-}

@@ -22,14 +22,14 @@ class profile : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val regno=args.emailtoken
+        val emailtoken=args.emailtoken
         val view= inflater.inflate(R.layout.fragment_profile, container, false)
         db= FirebaseFirestore.getInstance()
 
         view.Edit.setOnClickListener {
             findNavController().navigate(R.id.action_profile_to_create_newProfie)
         }
-        val docref = db.collection("STUDENTS").document(regno)
+        val docref = db.collection("USERS").document(emailtoken)
         if (docref != null) {
             docref.get()
                 .addOnSuccessListener {
@@ -40,7 +40,7 @@ class profile : Fragment() {
                         view.Phoneno.text=document["Phone"].toString()
                         view.address.text=document["Address"].toString()
                         view.Name.text=document["Name"].toString()
-                        view.regno.text=document["Registration No"].toString()
+                        view.regno.text=document["Reg_no"].toString()
                     }
                 }
         }

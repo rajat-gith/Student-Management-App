@@ -5,12 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.util.jar.Manifest
 
 
 class home : Fragment() {
@@ -18,6 +24,7 @@ class home : Fragment() {
     private lateinit var dbref:DatabaseReference
     private lateinit var notice_recyclerview:RecyclerView
     private lateinit var noticelist:ArrayList<Notice_card>
+    var dataurl:String=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -43,6 +50,7 @@ class home : Fragment() {
         return view
 
     }
+
     private fun getnoticedata() {
         dbref = FirebaseDatabase.getInstance().getReference("Notices")
 

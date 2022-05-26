@@ -54,9 +54,8 @@
             android:id="@+id/action_profile_to_create_newProfie"
             app:destination="@id/create_newProfie" />
         <argument
-            android:name="Emailtoken"
-            app:argType="string"
-            android:defaultValue="Your_Name" />
+            android:name="emailtoken"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/deptpage_for_student"
@@ -90,6 +89,9 @@
         <action
             android:id="@+id/action_signin_fragment_to_admin_login_fragment"
             app:destination="@id/admin_login_fragment" />
+        <action
+            android:id="@+id/action_signin_fragment_to_profile"
+            app:destination="@id/profile" />
     </fragment>
     <fragment
         android:id="@+id/signup_fragment"

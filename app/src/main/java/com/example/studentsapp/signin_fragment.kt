@@ -33,6 +33,7 @@ class signin_fragment : Fragment() {
             if(checking()){
                 val email=view.email.text.toString()
                 val password= view.password.text.toString()
+                val action=signin_fragmentDirections.actionSigninFragmentToProfile(email)
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(requireActivity()) { task ->
                         if (task.isSuccessful) {

@@ -30,8 +30,6 @@ class create_newProfie : Fragment() {
         val view= inflater.inflate(R.layout.fragment_create_new_profie, container, false)
 
         view.Submit.setOnClickListener {
-            val action=create_newProfieDirections.actionCreateNewProfieToProfile()
-            action.emailtoken=Registrationno.text.toString()
             db= FirebaseFirestore.getInstance()
             if(checking()){
                 var name=Name.text.toString()
@@ -55,7 +53,6 @@ class create_newProfie : Fragment() {
                         Toast.makeText(activity?.applicationContext,"Uploaded",Toast.LENGTH_SHORT).show()
                     }
                 }
-            Navigation.findNavController(view).navigate(action)
         }
         return view
     }
