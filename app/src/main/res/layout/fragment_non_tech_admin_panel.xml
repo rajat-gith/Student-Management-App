@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="3dp"
+        android:layout_margin="5dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread_inside">
@@ -21,6 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:elevation="3dp"
+            android:layout_margin="5dp"
             app:cardCornerRadius="5dp">
 
             <LinearLayout
@@ -41,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:gravity="center"
-                    android:text="RBOTICS SOCIETY"
+                    android:text="ROBOTICS SOCIETY"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -53,6 +55,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/enigma1"
             android:layout_width="0dp"
+            android:layout_margin="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:elevation="3dp"
@@ -91,6 +94,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="3dp"
+        android:layout_margin="5dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
 
@@ -99,6 +103,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_margin="5dp"
             android:elevation="3dp"
             app:cardCornerRadius="5dp">
 
@@ -119,7 +124,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:gravity="center"
-                    android:text="IDEA INNOVATION CELL"
+                    android:text="IIC"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -131,6 +136,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/vc"
             android:layout_width="0dp"
+            android:layout_margin="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:elevation="3dp"
@@ -168,12 +174,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="3dp"
+        android:layout_margin="5dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/dance"
             android:layout_width="0dp"
+            android:layout_margin="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:elevation="3dp"
@@ -211,6 +219,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:elevation="3dp"
+            android:layout_margin="5dp"
             app:cardCornerRadius="5dp">
 
             <LinearLayout
@@ -245,6 +254,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="3dp"
+        android:layout_margin="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
@@ -254,6 +264,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:elevation="3dp"
+            android:layout_margin="5dp"
             app:cardCornerRadius="5dp">
 
             <LinearLayout
@@ -288,6 +299,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:elevation="3dp"
+            android:layout_margin="5dp"
             app:cardCornerRadius="5dp">
 
             <LinearLayout

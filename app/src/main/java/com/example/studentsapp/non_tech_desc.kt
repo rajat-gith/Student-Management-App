@@ -6,15 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
-import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.*
+import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.fragment_non_tech_desc.*
+import kotlinx.android.synthetic.main.fragment_non_tech_desc.view.*
 
 
 class non_tech_desc : Fragment() {
     val args:non_tech_descArgs by navArgs()
     private lateinit var dbref: DatabaseReference
-    private var param1: String? = null
-    private var param2: String? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -24,7 +24,21 @@ class non_tech_desc : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view= inflater.inflate(R.layout.fragment_non_tech_desc, container, false)
-        val domainname=args.domainName
+        val admin_domain=args.domainName
+        dbref = FirebaseDatabase.getInstance().getReference("$admin_domain domain")
+        dbref.addValueEventListener(object :ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    val desc=snapshot.child("$admin_domain/domain_desc").getValue()
+                    domain_desc.text=desc.toString()
+                }
+
+            }
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+
 
         return view
     }

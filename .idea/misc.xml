@@ -9,6 +9,8 @@
         <entry key="..\:/StudentsApp/app/src/main/res/drawable/ic_baseline_exit_to_app_24.xml" value="0.26614583333333336" />
         <entry key="..\:/StudentsApp/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.26614583333333336" />
         <entry key="..\:/StudentsApp/app/src/main/res/drawable/plane_rectangle.xml" value="0.17743055555555556" />
+        <entry key="..\:/StudentsApp/app/src/main/res/font/archivo_black.xml" value="0.16944444444444445" />
+        <entry key="..\:/StudentsApp/app/src/main/res/font/bebas_neue.xml" value="0.6" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/activity_admin_dashboard.xml" value="0.15789473684210525" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/activity_admin_login.xml" value="0.15789473684210525" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/activity_main.xml" value="0.136" />
@@ -30,6 +32,9 @@
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_faculty.xml" value="0.16666666666666666" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_home.xml" value="0.2985842985842986" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_non_academic.xml" value="0.25" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_non_tech_admin_domain.xml" value="0.1" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_non_tech_admin_panel.xml" value="0.25" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_non_tech_desc.xml" value="0.1" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_signin.xml" value="0.25" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_signin_fragment.xml" value="0.15789473684210525" />

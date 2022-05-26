@@ -6,7 +6,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".academic">
-
+    <androidx.cardview.widget.CardView
+        android:id="@+id/top_bar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#072E69">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_exit_to_app_24"
+            android:layout_gravity="right"
+            android:layout_margin="10dp"/>
+    </androidx.cardview.widget.CardView>
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
