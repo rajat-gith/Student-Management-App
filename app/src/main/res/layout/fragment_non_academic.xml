@@ -36,6 +36,7 @@
                     android:src="@drawable/ic_noto_v1_robot" />
 
                 <TextView
+                    android:id="@+id/Rs_t"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
@@ -70,6 +71,7 @@
                     android:src="@drawable/ic_bi_file_code_fill" />
 
                 <TextView
+                    android:id="@+id/E_t"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
@@ -112,6 +114,7 @@
                     android:src="@drawable/ic_emojione_rocket" />
 
                 <TextView
+                    android:id="@+id/iic_t"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
@@ -145,6 +148,7 @@
                     android:src="@drawable/ic_emojione_v1_racing_car" />
 
                 <TextView
+                    android:id="@+id/vc_t"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
@@ -187,6 +191,7 @@
                     android:src="@drawable/ic_fxemoji_dancer" />
 
                 <TextView
+                    android:id="@+id/vib_t"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
@@ -220,6 +225,7 @@
                     android:src="@drawable/ic_noto_man_singer" />
 
                 <TextView
+                    android:id="@+id/sou_t"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
@@ -262,6 +268,7 @@
                     android:src="@drawable/ic_flat_color_icons_sports_mode" />
 
                 <TextView
+                    android:id="@+id/spo_t"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
@@ -295,6 +302,7 @@
                     android:src="@drawable/ic_el_group" />
 
                 <TextView
+                    android:id="@+id/sam_t"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
