@@ -19,11 +19,6 @@ import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.fragment_create_notice.*
 import kotlinx.android.synthetic.main.fragment_create_notice.view.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.tasks.await
-import kotlinx.coroutines.withContext
 
 private const val REQUEST_CODE_IMAGE_PICK = 0
 

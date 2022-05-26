@@ -50,6 +50,7 @@ class home : Fragment(),Notice_Adapter.OnItemClickListener {
         noticelist= arrayListOf<Notice_card>()
         getnoticedata()
 
+
         view.academic_button.setOnClickListener {
             findNavController().navigate(R.id.action_home2_to_academic)
         }
@@ -69,6 +70,7 @@ class home : Fragment(),Notice_Adapter.OnItemClickListener {
                         val user = userSnapshot.getValue(Notice_card::class.java)
                         noticelist.add(user!!)
                     }
+
                     notice_recyclerview.adapter = Notice_Adapter(noticelist,this@home)
                 }
             }

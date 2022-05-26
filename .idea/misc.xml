@@ -22,13 +22,14 @@
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_admin_dept_page.xml" value="0.2368659420289855" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_admin_login.xml" value="0.15789473684210525" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_admin_login_fragment.xml" value="0.25" />
-        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_admin_panel.xml" value="0.15789473684210525" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_admin_panel.xml" value="0.16799999999999998" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_create_new_profie.xml" value="0.1" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_create_notice.xml" value="0.264" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_department_descriptiom.xml" value="0.152" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_deptpage_for_student.xml" value="0.264" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_faculty.xml" value="0.16666666666666666" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_home.xml" value="0.2985842985842986" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_non_academic.xml" value="0.25" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_signin.xml" value="0.25" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_signin_fragment.xml" value="0.15789473684210525" />
@@ -36,8 +37,10 @@
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_signup_fragment.xml" value="0.25" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_splash_screen.xml" value="0.136" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_splashscrren_fragment.xml" value="0.25" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_upload_holiday_fragmney.xml" value="0.16" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/item_custom_row.xml" value="0.16666666666666666" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/nav_header.xml" value="0.25" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/non_tech_page_card.xml" value="0.25" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/notice_card.xml" value="0.16666666666666666" />
         <entry key="..\:/StudentsApp/app/src/main/res/menu/menu.xml" value="0.1" />
         <entry key="..\:/StudentsApp/app/src/main/res/menu/nav_header_menu.xml" value="0.25" />
