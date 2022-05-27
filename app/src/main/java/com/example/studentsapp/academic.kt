@@ -27,6 +27,9 @@ class academic : Fragment() {
         view.top_bar1.setOnClickListener {
             findNavController().navigate(R.id.action_academic_to_home2)
         }
+        view.timetable.setOnClickListener {
+            findNavController().navigate(R.id.action_academic_to_student_time_table)
+        }
         return view
     }
 

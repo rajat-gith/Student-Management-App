@@ -1,59 +1,112 @@
 package com.example.studentsapp
 
+import android.Manifest
+import android.app.DownloadManager
+import android.content.Context
+import android.content.pm.PackageManager
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.os.Environment
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.fragment_student_time_table.view.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [student_time_table.newInstance] factory method to
- * create an instance of this fragment.
- */
-class student_time_table : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
+class student_time_table : Fragment(),TT_Adapter.OnItemClickListener {
+    var dataurl:String=""
+    private val REQ_CODE=100
+    private lateinit var dbref: DatabaseReference
+    private lateinit var ttlist:ArrayList<Time_Table_card>
+    private lateinit var tt_recyclerview:RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_student_time_table, container, false)
+        val view= inflater.inflate(R.layout.fragment_student_time_table, container, false)
+        tt_recyclerview=view.recyclerView
+        tt_recyclerview.layoutManager=LinearLayoutManager(this.context)
+        ttlist= arrayListOf<Time_Table_card>()
+        getTTdata()
+        return view
     }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment student_time_table.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            student_time_table().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun getTTdata(){
+        dbref=FirebaseDatabase.getInstance().getReference("TIME_TABLE")
+        dbref.addValueEventListener(object :ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    for(ttsnapshot in snapshot.children){
+                        val tt=ttsnapshot.getValue(Time_Table_card::class.java)
+                        ttlist.add(tt!!)
+                    }
+                    tt_recyclerview.adapter=TT_Adapter(ttlist,this@student_time_table)
                 }
             }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+    }
+
+
+
+    @RequiresApi(Build.VERSION_CODES.M)
+
+    private fun startDownloading(){
+        val request= DownloadManager.Request(Uri.parse(dataurl))
+        request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI or DownloadManager.Request.NETWORK_MOBILE)
+        request.setTitle("Download")
+        request.setDescription("Your File is Downloading >>>")
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,"${System.currentTimeMillis()}")
+        val Manager = activity!!.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+        Manager.enqueue(request)
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        when(requestCode){
+            REQ_CODE->{
+                if(grantResults.isNotEmpty() && grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                    startDownloading()
+                }else{
+                    Toast.makeText(activity?.applicationContext,"Permission not Granted",Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    }
+
+    override fun onItemClick(item: String) {
+        dataurl=item
+        if(context?.let {
+                ContextCompat.checkSelfPermission(
+                    it,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+                )
+            } ==PackageManager.PERMISSION_DENIED){
+            requestPermissions(arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE),REQ_CODE)
+        }else{
+            startDownloading()
+        }
+        Toast.makeText(activity?.applicationContext,"You Clicked on Download Button",Toast.LENGTH_SHORT).show()
     }
 }

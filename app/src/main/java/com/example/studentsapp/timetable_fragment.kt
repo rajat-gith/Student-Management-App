@@ -59,8 +59,6 @@ class timetable_fragment : Fragment() {
                 databaseReference.child(("$tt_name")).setValue(time_table).addOnSuccessListener {
                     Toast.makeText(activity?.applicationContext,"Fetched and Uploaded to Database",Toast.LENGTH_SHORT).show()
                 }
-
-
                 })
             })
         }
