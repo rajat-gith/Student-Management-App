@@ -7,14 +7,14 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_margin="5dp"
         android:padding="3dp"
         app:cardCornerRadius="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/T_title"
@@ -23,8 +23,10 @@
                 android:text="Time Table"
                 android:padding="3dp"
                 android:layout_weight="2"
+                android:layout_marginStart="3dp"
                 android:fontFamily="@font/poppins"
                 android:textColor="@color/black"
+                android:gravity="left|center"
                 android:textSize="16sp"/>
             <ImageView
                 android:id="@+id/d_icon"
