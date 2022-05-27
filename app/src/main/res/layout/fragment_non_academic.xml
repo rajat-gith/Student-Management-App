@@ -62,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins"
                     android:gravity="center"
-                    android:text="RBOTICS SOCIETY"
+                    android:text="ROBOTICS SOCIETY"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
