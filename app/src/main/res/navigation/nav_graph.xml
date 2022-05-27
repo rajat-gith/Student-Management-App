@@ -112,6 +112,9 @@
         <action
             android:id="@+id/action_create_newProfie_to_profile"
             app:destination="@id/profile" />
+        <argument
+            android:name="token"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/signin_fragment"

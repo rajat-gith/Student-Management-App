@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.google.firebase.firestore.FirebaseFirestore
 
 import kotlinx.android.synthetic.main.fragment_create_new_profie.*
@@ -18,6 +19,7 @@ import kotlinx.android.synthetic.main.fragment_create_new_profie.view.*
 
 class create_newProfie : Fragment() {
     private lateinit var db: FirebaseFirestore
+    val args:create_newProfieArgs by navArgs()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -28,7 +30,7 @@ class create_newProfie : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view= inflater.inflate(R.layout.fragment_create_new_profie, container, false)
-
+        val token=args.token
         view.Submit.setOnClickListener {
             db= FirebaseFirestore.getInstance()
             if(checking()){
@@ -47,8 +49,8 @@ class create_newProfie : Fragment() {
                     "Address" to address,
                     "Registration No" to regno
                 )
-                val students=db.collection("STUDENTS")
-                students.document(regno).set(student)
+                val students=db.collection("USERS")
+                students.document(token).set(student)
                     .addOnSuccessListener {
                         Toast.makeText(activity?.applicationContext,"Uploaded",Toast.LENGTH_SHORT).show()
                     }

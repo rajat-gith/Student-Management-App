@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.firebase.firestore.FirebaseFirestore
@@ -25,9 +26,9 @@ class profile : Fragment() {
         val emailtoken=args.emailtoken
         val view= inflater.inflate(R.layout.fragment_profile, container, false)
         db= FirebaseFirestore.getInstance()
-
+        val action=profileDirections.actionProfileToCreateNewProfie(emailtoken)
         view.Edit.setOnClickListener {
-            findNavController().navigate(R.id.action_profile_to_create_newProfie)
+            Navigation.findNavController(view).navigate(action)
         }
         val docref = db.collection("USERS").document(emailtoken)
         if (docref != null) {
