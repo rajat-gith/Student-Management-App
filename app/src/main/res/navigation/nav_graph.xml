@@ -43,6 +43,9 @@
         <action
             android:id="@+id/action_academic_to_home2"
             app:destination="@id/home2" />
+        <action
+            android:id="@+id/action_academic_to_student_time_table"
+            app:destination="@id/student_time_table" />
     </fragment>
     <fragment
         android:id="@+id/non_academic"
@@ -205,6 +208,9 @@
         <action
             android:id="@+id/action_admin_panel_to_non_tech_admin_panel"
             app:destination="@id/non_tech_admin_panel" />
+        <action
+            android:id="@+id/action_admin_panel_to_timetable_fragment"
+            app:destination="@id/timetable_fragment" />
     </fragment>
     <fragment
         android:id="@+id/non_tech_desc"
@@ -242,5 +248,23 @@
         <action
             android:id="@+id/action_non_tech_admin_panel_to_admin_panel"
             app:destination="@id/admin_panel" />
+    </fragment>
+    <fragment
+        android:id="@+id/timetable_fragment"
+        android:name="com.example.studentsapp.timetable_fragment"
+        android:label="fragment_timetable_fragment"
+        tools:layout="@layout/fragment_timetable_fragment" >
+        <action
+            android:id="@+id/action_timetable_fragment_to_admin_panel"
+            app:destination="@id/admin_panel" />
+    </fragment>
+    <fragment
+        android:id="@+id/student_time_table"
+        android:name="com.example.studentsapp.student_time_table"
+        android:label="fragment_student_time_table"
+        tools:layout="@layout/fragment_student_time_table" >
+        <action
+            android:id="@+id/action_student_time_table_to_academic"
+            app:destination="@id/academic" />
     </fragment>
 </navigation>

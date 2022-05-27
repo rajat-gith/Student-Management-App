@@ -43,11 +43,14 @@
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_signup_fragment.xml" value="0.25" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_splash_screen.xml" value="0.136" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_splashscrren_fragment.xml" value="0.25" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_student_time_table.xml" value="0.27447916666666666" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_timetable_fragment.xml" value="0.27447916666666666" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/fragment_upload_holiday_fragmney.xml" value="0.16" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/item_custom_row.xml" value="0.16666666666666666" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/nav_header.xml" value="0.25" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/non_tech_page_card.xml" value="0.25" />
         <entry key="..\:/StudentsApp/app/src/main/res/layout/notice_card.xml" value="0.16666666666666666" />
+        <entry key="..\:/StudentsApp/app/src/main/res/layout/time_table.xml" value="0.27447916666666666" />
         <entry key="..\:/StudentsApp/app/src/main/res/menu/menu.xml" value="0.1" />
         <entry key="..\:/StudentsApp/app/src/main/res/menu/nav_header_menu.xml" value="0.25" />
       </map>

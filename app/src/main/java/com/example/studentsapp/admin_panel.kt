@@ -34,6 +34,9 @@ class admin_panel : Fragment() {
         notice_card.setOnClickListener {
             findNavController().navigate(R.id.action_admin_panel_to_create_notice)
         }
+        view.tt_card.setOnClickListener {
+            findNavController().navigate(R.id.action_admin_panel_to_timetable_fragment)
+        }
         return view
     }
 
